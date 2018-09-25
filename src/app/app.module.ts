@@ -23,6 +23,7 @@ import {FormsModule} from '@angular/forms';
 import { InputComponent } from './shared/input/input.component';
 import { RadioComponent } from './shared/radio/radio.component';
 import { OrderItemsComponent } from './order/order-items/order-items.component';
+import { OrderService } from './order/order.service';
 
 
 @NgModule({
@@ -49,7 +50,7 @@ import { OrderItemsComponent } from './order/order-items/order-items.component';
     RouterModule.forRoot(ROUTES),
     FormsModule
   ],
-  providers: [RestaurantsService, ShoppingCartService, {provide: LOCALE_ID, useValue: 'pr-BR'}],
+  providers: [RestaurantsService, ShoppingCartService, OrderService,  {provide: LOCALE_ID, useValue: 'pr-BR'}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
