@@ -1,4 +1,3 @@
-import { CoreModule } from './core/core.module';
 import { ROUTES } from './app.routes';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, LOCALE_ID } from '@angular/core';
@@ -40,8 +39,7 @@ import { SharedModule } from './shared/shared.module';
     HttpModule,
     RouterModule.forRoot(ROUTES),
     FormsModule, 
-    SharedModule,
-    CoreModule
+    SharedModule.forRoot()
   ],
   providers: [{provide: LOCALE_ID, useValue: 'pr-BR'}],
   bootstrap: [AppComponent]
