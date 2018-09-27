@@ -1,4 +1,4 @@
-import { RestaurantsService } from './restaurants/restaurants.service';
+import { CoreModule } from './core/core.module';
 import { ROUTES } from './app.routes';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, LOCALE_ID } from '@angular/core';
@@ -16,9 +16,7 @@ import { MenuComponent } from './restaurant-detail/menu/menu.component';
 import { ShoppingCartComponent } from './restaurant-detail/shopping-cart/shopping-cart.component';
 import { MenuItemComponent } from './restaurant-detail/menu-item/menu-item.component';
 import { ReviewsComponent } from './restaurant-detail/reviews/reviews.component'
-import { ShoppingCartService } from './restaurant-detail/shopping-cart/shopping-cart.service';
 import {FormsModule} from '@angular/forms';
-import { OrderService } from './order/order.service';
 import { OrderSummaryComponent } from './order-summary/order-summary.component';
 import { SharedModule } from './shared/shared.module';
 
@@ -42,9 +40,10 @@ import { SharedModule } from './shared/shared.module';
     HttpModule,
     RouterModule.forRoot(ROUTES),
     FormsModule, 
-    SharedModule
+    SharedModule,
+    CoreModule
   ],
-  providers: [RestaurantsService, ShoppingCartService, OrderService,  {provide: LOCALE_ID, useValue: 'pr-BR'}],
+  providers: [{provide: LOCALE_ID, useValue: 'pr-BR'}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
