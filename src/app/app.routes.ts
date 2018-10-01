@@ -1,3 +1,4 @@
+import { NotFoundComponent } from './not-found/not-found.component';
 import { ReviewsComponent } from './restaurant-detail/reviews/reviews.component';
 import { MenuComponent } from './restaurant-detail/menu/menu.component';
 import { RestaurantDetailComponent } from './restaurant-detail/restaurant-detail.component';
@@ -18,5 +19,6 @@ export const ROUTES: Routes = [
     },
     {path: 'order', loadChildren: './order/order.module#OrderModule'},
     {path: 'order-summary', component: OrderSummaryComponent},
-    {path: 'about', loadChildren: './about/about.module#AboutModule'}
+    {path: 'about', loadChildren: './about/about.module#AboutModule'},
+    {path: '**', component: NotFoundComponent}
 ]

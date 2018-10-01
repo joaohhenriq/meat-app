@@ -19,6 +19,7 @@ import {FormsModule} from '@angular/forms';
 import { OrderSummaryComponent } from './order-summary/order-summary.component';
 import { SharedModule } from './shared/shared.module';
 import { Browser } from '../../node_modules/protractor';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { Browser } from '../../node_modules/protractor';
     ShoppingCartComponent,
     MenuItemComponent,
     ReviewsComponent,
-    OrderSummaryComponent
+    OrderSummaryComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
