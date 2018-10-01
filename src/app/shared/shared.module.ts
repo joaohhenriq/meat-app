@@ -7,11 +7,12 @@ import { NgModule, ModuleWithProviders } from "../../../node_modules/@angular/co
 import { InputComponent } from "./input/input.component";
 import { CommonModule } from '../../../node_modules/@angular/common';
 import { FormsModule, ReactiveFormsModule } from '../../../node_modules/@angular/forms';
+import { SnackbarComponent } from './messages/snackbar/snackbar.component';
 
 @NgModule({
-    declarations: [InputComponent, RadioComponent, RatingComponent],
+    declarations: [InputComponent, RadioComponent, RatingComponent, SnackbarComponent ],
     imports: [CommonModule, FormsModule, ReactiveFormsModule],
-    exports: [InputComponent, RadioComponent, RatingComponent, 
+    exports: [InputComponent, RadioComponent, RatingComponent, SnackbarComponent,
             CommonModule, FormsModule, ReactiveFormsModule]
 })
 
