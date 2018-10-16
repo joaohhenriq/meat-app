@@ -1,3 +1,4 @@
+import { AuthInterceptor } from './../security/auth.interceptor';
 import { LeaveOrderGuard } from './../order/leave-order.guard';
 import { LoginService } from './../security/login/login.service';
 import { OrderService } from './../order/order.service';
@@ -12,6 +13,7 @@ import { FormsModule, ReactiveFormsModule } from '../../../node_modules/@angular
 import { SnackbarComponent } from './messages/snackbar/snackbar.component';
 import { NotificationService } from './messages/notification.service';
 import { LoggedInGuard } from '../security/loggedin.guard';
+import { HTTP_INTERCEPTORS } from '../../../node_modules/@angular/common/http';
 
 @NgModule({
     declarations: [InputComponent, RadioComponent, RatingComponent, SnackbarComponent ],
@@ -26,7 +28,8 @@ export class SharedModule{
             ngModule: SharedModule,
             providers: [ShoppingCartService, RestaurantsService, 
                         OrderService, NotificationService, LoginService,
-                        LoggedInGuard, LeaveOrderGuard]
+                        LoggedInGuard, LeaveOrderGuard, 
+                        {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}]
         }
     }
 }
