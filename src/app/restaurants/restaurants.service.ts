@@ -1,5 +1,4 @@
 import { MenuItem } from './../restaurant-detail/menu-item/menu-item.model';
-import { ErrorHandler } from './../error-handler';
 import { MEAT_API } from './../app.api';
 import { Restaurant } from './restaurant/restaurant.model';
 import { Injectable } from '@angular/core';

@@ -1,6 +1,7 @@
+import { ApplicationErrorHandler } from './error-handler';
 import { ROUTES } from './app.routes';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, LOCALE_ID } from '@angular/core';
+import { NgModule, LOCALE_ID, ErrorHandler } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, PreloadAllModules } from '@angular/router';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations'
@@ -48,7 +49,8 @@ import { UserDetailComponent } from './header/user-detail/user-detail.component'
     RouterModule.forRoot(ROUTES, {preloadingStrategy: PreloadAllModules}),
     SharedModule.forRoot()
   ],
-  providers: [{provide: LOCALE_ID, useValue: 'pr-BR'}],
+  providers: [{provide: LOCALE_ID, useValue: 'pr-BR'},
+              {provide: ErrorHandler, useClass: ApplicationErrorHandler}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
